@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md. Shahriar Rahman | Official Portfolio</title>
+    <meta name="description" content="Official Portfolio of Md. Shahriar Rahman - Musical Artist, Author, Speed Cuber, and Creative Visionary.">
+    
+    <!-- Tailwind CSS for Styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* Slate 900 */
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
+                radial-gradient(at 50% 0%, hsla(225,39%,30%,0.2) 0, transparent 50%), 
+                radial-gradient(at 100% 0%, hsla(339,49%,30%,0.2) 0, transparent 50%);
+            background-attachment: fixed;
+            color: #f8fafc;
+        }
+        
+        /* Glassmorphism Card Style */
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .link-item {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .link-item:hover {
+            transform: translateY(-3px) scale(1.02);
+            border-color: #38bdf8;
+            box-shadow: 0 10px 25px -5px rgba(56, 189, 248, 0.2);
+            background: rgba(51, 65, 85, 0.9);
+        }
+
+        /* Filter Button Active State */
+        .filter-btn.active {
+            background-color: #38bdf8;
+            color: #0f172a;
+            font-weight: 600;
+            border-color: #38bdf8;
+        }
+
+        /* Profile Image Animation */
+        .profile-img {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Hide Scrollbar but keep functionality */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+    </style>
+</head>
+
+<body class="min-h-screen p-4 md:p-8 flex justify-center">
+
+    <main class="w-full max-w-4xl">
+        <!-- Header / Profile Section -->
+        <header class="text-center mb-10 pt-8">
+            <div class="relative inline-block mb-6">
+                <div class="absolute inset-0 bg-sky-500 rounded-full blur opacity-30 animate-pulse"></div>
+                <img src="https://github.com/mdshahriarrahmanofficial.png" 
+                     alt="Md. Shahriar Rahman" 
+                     class="profile-img relative w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-sky-400 object-cover mx-auto shadow-2xl z-10"
+                     onerror="this.src='https://placehold.co/200x200/1e293b/38bdf8?text=MSR'">
+            </div>
+            
+            <h1 class="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-blue-600 mb-3">
+                Md. Shahriar Rahman
+            </h1>
+            <h2 class="text-lg md:text-xl text-slate-300 font-medium mb-4 flex flex-wrap justify-center gap-2 items-center">
+                <span><i class="fas fa-music text-sky-400 mr-1"></i> Artist</span> •
+                <span><i class="fas fa-book text-sky-400 mr-1"></i> Author</span> •
+                <span><i class="fas fa-code text-sky-400 mr-1"></i> Developer</span> •
+                <span><i class="fas fa-cube text-sky-400 mr-1"></i> Speedcuber</span>
+            </h2>
+            <p class="text-slate-400 max-w-2xl mx-auto text-sm md:text-base px-4 leading-relaxed">
+                Welcome to my official digital hub. Explore my journey through music, literature, technology, visual arts, and professional speedcubing.
+            </p>
+        </header>
+
+        <!-- Category Filters -->
+        <nav class="flex flex-wrap justify-center gap-3 mb-10 sticky top-4 z-50 p-2 glass-card rounded-2xl mx-2">
+            <button class="filter-btn active px-4 py-2 rounded-xl border border-slate-600 text-sm transition-all" data-filter="all">All Links</button>
+            <button class="filter-btn px-4 py-2 rounded-xl border border-slate-600 text-sm transition-all hover:bg-slate-700" data-filter="identity">Identity & PR</button>
+            <button class="filter-btn px-4 py-2 rounded-xl border border-slate-600 text-sm transition-all hover:bg-slate-700" data-filter="music">Music</button>
+            <button class="filter-btn px-4 py-2 rounded-xl border border-slate-600 text-sm transition-all hover:bg-slate-700" data-filter="books">Books</button>
+            <button class="filter-btn px-4 py-2 rounded-xl border border-slate-600 text-sm transition-all hover:bg-slate-700" data-filter="tech">Tech & Art</button>
+            <button class="filter-btn px-4 py-2 rounded-xl border border-slate-600 text-sm transition-all hover:bg-slate-700" data-filter="social">Social</button>
+            <button class="filter-btn px-4 py-2 rounded-xl border border-slate-600 text-sm transition-all hover:bg-slate-700" data-filter="cubing">Cubing</button>
+        </nav>
+
+        <div id="links-container" class="grid grid-cols-1 md:grid-cols-2 gap-4 pb-20">
+
+            <!-- Identity & PR -->
+            <a href="https://www.google.com/search?kgmid=/g/11svp9l4s8" target="_blank" class="link-item glass-card p-4 rounded-2xl flex items-center gap-4 category-identity category-all">
+                <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-sky-400 text-xl border border-slate-600"><i class="fab fa-google"></i></div>
+                <div class="flex-1"><h3 class="font-semibold text-lg">Google Knowledge Panel</h3><p class="text-xs text-slate-400">Official Google Search Profile</p></div>
+                <i class="fas fa-external-link-alt text-slate-600 text-sm"></i>
+            </a>
+            <a href="https://www.imdb.com/name/nm17603571/" target="_blank" class="link-item glass-card p-4 rounded-2xl flex items-center gap-4 category-identity category-all">
+                <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-yellow-500 text-xl border border-slate-600"><i class="fab fa-imdb"></i></div>
+                <div class="flex-1"><h3 class="font-semibold text-lg">IMDb Profile</h3><p class="text-xs text-slate-400">Actor / Artist Database</p></div>
+                <i class="fas fa-external-link-alt text-slate-600 text-sm"></i>
+            </a>
+            <a href="https://www.crunchbase.com/person/md-shahriar-rahman" target="_blank" class="link-item glass-card p-4 rounded-2xl flex items-center gap-4 category-identity category-all">
+                <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-blue-400 text-xl border border-slate-600"><i class="fas fa-building"></i></div>
+                <div class="flex-1"><h3 class="font-semibold text-lg">Crunchbase</h3><p class="text-xs text-slate-400">Professional Business Profile</p></div>
+            </a>
+            <a href="https://menafn.com/1109938318/Md-Shahriar-Rahman-Bangladeshs-Multi-Talented-Musical-Artist-Author-Speed-Cuber-and-Creative-Visionary-Making-Global-Waves" target="_blank" class="link-item glass-card p-4 rounded-2xl flex items-center gap-4 category-identity category-all">
+                <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-sky-400 text-xl border border-slate-600"><i class="fas fa-newspaper"></i></div>
+                <div class="flex-1"><h3 class="font-semibold text-lg">MENAFN Global News</h3><p class="text-xs text-slate-400">Featured Article & PR</p></div>
+            </a>
+            <a href="https://orcid.org/0009-0002-3071-2423" target="_blank" class="link-item glass-card p-4 rounded-2xl flex items-center gap-4 category-identity category-all">
+                <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-green-400 text-xl border border-slate-600"><i class="fab fa-orcid"></i></div>
+                <div class="flex-1"><h3 class="font-semibold text-lg">ORCID</h3><p class="text-xs text-slate-400">Academic & Research ID</p></div>
+            </a>
+
+            <!-- Music -->
+            <a href="https://open.spotify.com/artist/18vS4Z09T8IVtn1Fev6Kkc" target="_blank" class="link-item glass-card p-4 rounded-2xl flex items-center gap-4 category-music category-all">
+                <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-green-500 text-xl border border-slate-600"><i class="fab fa-spotify"></i></div>
+                <div class="flex-1"><h3 class="font-semibold text-lg">Spotify</h3><p class="text-xs text-slate-400">Listen to my latest tracks</p></div>
+            </a>
+            <a href="https://music.apple.com/in/artist/md-shahriar-rahman/1693623628" target="_blank" class="link-item glass-card p-4 rounded-2xl flex items-center gap-4 category-music category-all">
+                <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-pink-500 text-xl border border-slate-600"><i class="fab fa-apple"></i></div>
+                <div class="flex-1"><h3 class="font-semibold text-lg">Apple Music</h3><p class="text-xs text-slate-400">Stream on Apple Music</p></div>
+            </a>
+            <a href="https://music.amazon.in/artists/B0C8MF385Q/md-shahriar-rahman" target="_blank" class="link-item glass-card p-4 rounded-2xl flex items-center gap-4 category-music category-all">
+                <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-blue-300 text-xl border border-slate-600"><i class="fab fa-amazon"></i></div>
+                <div class="flex-1"><h3 class="font-semibold text-lg">Amazon Music</h3><p class="text-xs text-slate-400">Available on Amazon</p></div>
+            </a>
+            <a href="https://soundcloud.com/mdshahriarrahmanofficial" target="_blank" class="link-item glass-card p-4 rounded-2xl flex items-center gap-4 category-music category-all">
+                <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-orange-500 text-xl border border-slate-600"><i class="fab fa-soundcloud"></i></div>
+                <div class="flex-1"><h3 class="font-semibold text-lg">SoundCloud</h3><p class="text-xs text-slate-400">Original mixes and beats</p></div>
+            </a>
+            <a href="https://www.deezer.com/en/artist/218311535" target="_blank" class="link-item glass-card p-4 rounded-2xl flex items-center gap-4 category-music category-all">
+                <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-purple-500 text-xl border border-slate-600"><i class="fab fa-deezer"></i></div>
+                <div class="flex-1"><h3 class="font-semibold text-lg">Deezer</h3><p class="text-xs text-slate-400">Stream on Deezer</p></div>
+            </a>
+            <a href="https://tidal.com/artist/40156548" target="_blank" class="link-item glass-card p-4 rounded-2xl flex items-center gap-4 category-music category-all">
+                <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-white text-xl border border-slate-600"><i class="fas fa-play"></i></div>
+                <div class="flex-1"><h3 class="font-semibold text-lg">Tidal</h3><p class="text-xs text-slate-400">High Fidelity Music</p></div>
+            </a>
+
+            <!-- Books & Literature -->
+            <a href="https://books.apple.com/us/author/md-shahriar-rahman/id1693623628" target="_blank" class="link-item glass-card p-4 rounded-2xl flex items-center gap-4 category-books category-all">
+                <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-slate-200 text-xl border border-slate-600"><i class="fas fa-book"></i></div>
+                <div class="flex-1"><h3 class="font-semibold text-lg">Apple Books</h3><p class="text-xs text-slate-400">Read my publications</p></div>
+            </a>
+            <a href="https://www.barnesandnoble.com/w/mysteries-of-midnight-city-1-md-shahriar-rahman/1148160561" target="_blank" class="link-item glass-card p-4 rounded-2xl flex items-center gap-4 category-books category-all">
+                <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-green-600 text-xl border border-slate-600"><i class="fas fa-book-open"></i></div>
+                <div class="flex-1"><h3 class="font-semibold text-lg">Barnes & Noble</h3><p class="text-xs text-slate-400">Mysteries of Midnight City</p></div>
+            </a>
+            <a href="https://allpoetry.com/Md._Shahriar_Rahman/" target="_blank" class="link-item glass-card p-4 rounded-2xl flex items-center gap-4 category-books category-all">
+                <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-blue-400 text-xl border border-slate-600"><i class="fas fa-feather-alt"></i></div>
+                <div class="flex-1"><h3 class="font-semibold text-lg">AllPoetry</h3><p class="text-xs text-slate-400">Read my poetic works</p></div>
+            </a>
+            <a href="https://www.smashwords.com/profile/view/Md._ShahriarRahman" target="_blank" class="link-item glass-card p-4 rounded-2xl flex items-center gap-4 category-books category-all">
+                <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-yellow-400 text-xl border border-slate-600"><i class="fas fa-file-alt"></i></div>
+                <div class="flex-1"><h3 class="font-semibold text-lg">Smashwords</h3><p class="text-xs text-slate-400">Independent eBooks</p></div>
+            </a>
+
+            <!-- Tech & Art -->
+            <a href="https://github.com/mdshahriarrahmanofficial" target="_blank" class="link-item glass-card p-4 rounded-2xl flex items-center gap-4 category-tech category-all">
+                <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-white text-xl border border-slate-600"><i class="fab fa-github"></i></div>
+                <div class="flex-1"><h3 class="font-semibold text-lg">GitHub</h3><p class="text-xs text-slate-400">Open source projects & code</p></div>
+            </a>
+            <a href="https://codepen.io/MdShahriarRahman" target="_blank" class="link-item glass-card p-4 rounded-2xl flex items-center gap-4 category-tech category-all">
+                <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-white text-xl border border-slate-600"><i class="fab fa-codepen"></i></div>
+                <div class="flex-1"><h3 class="font-semibold text-lg">CodePen</h3><p class="text-xs text-slate-400">Frontend UI Snippets</p></div>
+            </a>
+            <a href="https://www.behance.net/mdshahriarrahman" target="_blank" class="link-item glass-card p-4 rounded-2xl flex items-center gap-4 category-tech category-all">
+                <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-blue-500 text-xl border border-slate-600"><i class="fab fa-behance"></i></div>
+                <div class="flex-1"><h3 class="font-semibold text-lg">Behance</h3><p class="text-xs text-slate-400">Creative Portfolios & UI/UX</p></div>
+            </a>
+            <a href="https://dribbble.com/mdshahriarrahman" target="_blank" class="link-item glass-card p-4 rounded-2xl flex items-center gap-4 category-tech category-all">
+                <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-pink-400 text-xl border border-slate-600"><i class="fab fa-dribbble"></i></div>
+                <div class="flex-1"><h3 class="font-semibold text-lg">Dribbble</h3><p class="text-xs text-slate-400">Design concepts</p></div>
+            </a>
+            <a href="https://unsplash.com/@mdshahriarrahman" target="_blank" class="link-item glass-card p-4 rounded-2xl flex items-center gap-4 category-tech category-all">
+                <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-white text-xl border border-slate-600"><i class="fas fa-camera"></i></div>
+                <div class="flex-1"><h3 class="font-semibold text-lg">Unsplash</h3><p class="text-xs text-slate-400">Photography Portfolio</p></div>
+            </a>
+            <a href="https://sketchfab.com/mdshahriarrahman" target="_blank" class="link-item glass-card p-4 rounded-2xl flex items-center gap-4 category-tech category-all">
+                <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-cyan-400 text-xl border border-slate-600"><i class="fas fa-cube"></i></div>
+                <div class="flex-1"><h3 class="font-semibold text-lg">Sketchfab</h3><p class="text-xs text-slate-400">3D Models & Art</p></div>
+            </a>
+
+            <!-- Social -->
+            <a href="https://www.youtube.com/@Itshahriarblogs" target="_blank" class="link-item glass-card p-4 rounded-2xl flex items-center gap-4 category-social category-all">
+                <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-red-500 text-xl border border-slate-600"><i class="fab fa-youtube"></i></div>
+                <div class="flex-1"><h3 class="font-semibold text-lg">YouTube</h3><p class="text-xs text-slate-400">Vlogs, Tutorials & Music</p></div>
+            </a>
+            <a href="https://x.com/shahriarhq" target="_blank" class="link-item glass-card p-4 rounded-2xl flex items-center gap-4 category-social category-all">
+                <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-white text-xl border border-slate-600"><i class="fab fa-x-twitter"></i></div>
+                <div class="flex-1"><h3 class="font-semibold text-lg">X (Twitter)</h3><p class="text-xs text-slate-400">Thoughts & Updates</p></div>
+            </a>
+            <a href="https://www.linkedin.com/in/mdshahriarrahmanofficial/" target="_blank" class="link-item glass-card p-4 rounded-2xl flex items-center gap-4 category-social category-all">
+                <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-blue-600 text-xl border border-slate-600"><i class="fab fa-linkedin-in"></i></div>
+                <div class="flex-1"><h3 class="font-semibold text-lg">LinkedIn</h3><p class="text-xs text-slate-400">Professional Network</p></div>
+            </a>
+            <a href="https://www.instagram.com/mdshahriarrahmanofficial/" target="_blank" class="link-item glass-card p-4 rounded-2xl flex items-center gap-4 category-social category-all">
+                <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-pink-500 text-xl border border-slate-600"><i class="fab fa-instagram"></i></div>
+                <div class="flex-1"><h3 class="font-semibold text-lg">Instagram</h3><p class="text-xs text-slate-400">Visual Journey</p></div>
+            </a>
+            <a href="https://www.tiktok.com/@iammdshahriarrahman" target="_blank" class="link-item glass-card p-4 rounded-2xl flex items-center gap-4 category-social category-all">
+                <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-white text-xl border border-slate-600"><i class="fab fa-tiktok"></i></div>
+                <div class="flex-1"><h3 class="font-semibold text-lg">TikTok</h3><p class="text-xs text-slate-400">Short-form videos</p></div>
+            </a>
+            <a href="https://www.threads.com/@mdshahriarrahmanofficial" target="_blank" class="link-item glass-card p-4 rounded-2xl flex items-center gap-4 category-social category-all">
+                <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-white text-xl border border-slate-600"><i class="fas fa-at"></i></div>
+                <div class="flex-1"><h3 class="font-semibold text-lg">Threads</h3><p class="text-xs text-slate-400">Daily micro-blogging</p></div>
+            </a>
+
+            <!-- Cubing -->
+            <a href="https://www.worldcubeassociation.org/persons/2025RAHM06" target="_blank" class="link-item glass-card p-4 rounded-2xl flex items-center gap-4 category-cubing category-all">
+                <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-orange-400 text-xl border border-slate-600"><i class="fas fa-cubes"></i></div>
+                <div class="flex-1"><h3 class="font-semibold text-lg">WCA Profile</h3><p class="text-xs text-slate-400">World Cube Association Official</p></div>
+            </a>
+            <a href="https://cubing.com/results/person/2025RAHM06" target="_blank" class="link-item glass-card p-4 rounded-2xl flex items-center gap-4 category-cubing category-all">
+                <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-yellow-400 text-xl border border-slate-600"><i class="fas fa-trophy"></i></div>
+                <div class="flex-1"><h3 class="font-semibold text-lg">Cubing Results</h3><p class="text-xs text-slate-400">Stats & Competitions</p></div>
+            </a>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="fixed bottom-0 left-0 w-full bg-slate-900/90 backdrop-blur-md border-t border-slate-800 text-center py-4 text-sm text-slate-400 z-50">
+        <p>&copy; 2026 Md. Shahriar Rahman. Developed with <i class="fas fa-heart text-red-500"></i></p>
+    </footer>
+
+    <!-- Filter Logic Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const linkItems = document.querySelectorAll('.link-item');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active', 'bg-sky-500', 'text-slate-900'));
+                    
+                    // Add active class to clicked button
+                    btn.classList.add('active');
+
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    // Filter Logic
+                    linkItems.forEach(item => {
+                        // Hide all first
+                        item.style.display = 'none';
+                        item.classList.remove('animate-[fadeIn_0.5s_ease-in-out]');
+
+                        // Show matched
+                        if (item.classList.contains(`category-${filterValue}`)) {
+                            item.style.display = 'flex';
+                            // Re-trigger animation hack
+                            void item.offsetWidth;
+                            item.style.animation = 'fadeIn 0.5s ease-in-out';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
